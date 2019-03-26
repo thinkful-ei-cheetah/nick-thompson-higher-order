@@ -49,3 +49,25 @@ console.log(filteredNames) // => ['Rich', 'Ray']
 
 //BONUS
 console.log(filter(myNames, (name) => name[0] === 'R'));
+
+
+function hazardWarningCreator(typeOfWarning){
+    let warningCounter= 0;
+
+    return function(location){
+        warningCounter++;
+        console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+        console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
+}
+}
+
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const swanWarning = hazardWarningCreator('Careful of the Black One!');
+const marblesWarning = hazardWarningCreator('Lost your Marbles!');
+
+rocksWarning('4th and Boulder');
+rocksWarning('5th and Big');
+rocksWarning('6th and Bad');
+swanWarning('9th and Cypress');
+swanWarning('11th and November');
+marblesWarning('Pop and Rock St');
