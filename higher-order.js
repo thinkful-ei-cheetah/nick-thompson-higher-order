@@ -87,3 +87,26 @@ function reportTurtleMvmt(movArray) {
 
 reportTurtleMvmt(turtleMvmt);
 // console.log(turtleMvmt);
+
+let inputCode = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+
+function codeReducer(Code){
+    let sentence = "";
+    let words =Code.split(' ');
+    //(words.length() === 3) ? sentence.push(" ") : words[words.Length-1].toUpperCase() ;
+    //words.reduce((acc, cur)=> acc+cur) 
+
+    return words.reduce((sentence, word)=> (word.length === 3) ? sentence+=" " : sentence+= (word[word.length-1].toUpperCase() ), '' );
+    //console.log(`Made: ${word[word.length-1].toUpperCase}`);
+    //console.log(`from ${sent}`);
+    //console.log(sent);
+    //return sent;
+}
+
+console.log( codeReducer(inputCode) );
+// let ex1="";
+// let ex='words';
+// ex1+= ex[ex.length-1].toUpperCase();
+// console.log(ex1);
+
+
