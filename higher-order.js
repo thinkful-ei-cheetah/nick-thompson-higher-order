@@ -52,15 +52,15 @@ console.log(filter(myNames, (name) => name[0] === 'R'));
 
 
 function hazardWarningCreator(typeOfWarning){
-    let warningCounter= 0;
+  let warningCounter= 0;
 
-    return function(location){
-        warningCounter++;
-        console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
-        (warningCounter==1) ? 
-        console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!`) : 
-        console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today!`) ;
-}
+  return function(location){
+    warningCounter++;
+    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+    (warningCounter==1) ? 
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!`) : 
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today!`) ;
+  }
 }
 
 const rocksWarning = hazardWarningCreator('Rocks on the Road');
@@ -73,3 +73,17 @@ rocksWarning('6th and Bad');
 swanWarning('9th and Cypress');
 swanWarning('11th and November');
 marblesWarning('Pop and Rock St');
+
+const turtleMvmt = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+function reportTurtleMvmt(movArray) {
+  return movArray
+    .filter(item => item[0] >= 0 && item[1] >= 0) //[[0, 0], [0, 5], [3, 2]];
+    //.map(item => item[0] + item[1])             // [0, 5, 5]
+    .map(item => item.reduce((acc, curr) => acc + curr))
+    // .reduce((acc, curr) => acc + curr )           
+    .forEach(element => console.log(element));                            // 0, 5, 5
+}
+
+reportTurtleMvmt(turtleMvmt);
+// console.log(turtleMvmt);
