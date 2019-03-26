@@ -57,7 +57,9 @@ function hazardWarningCreator(typeOfWarning){
     return function(location){
         warningCounter++;
         console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
-        console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
+        (warningCounter==1) ? 
+        console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!`) : 
+        console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today!`) ;
 }
 }
 
